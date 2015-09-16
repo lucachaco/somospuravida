@@ -1,8 +1,24 @@
 body {
-  background: #de1c29; }
+  font: 17px/24px freight-sans-pro, Verdana, Geneva, sans-serif;
+  background: #de1c29;
+  color: #fffafa; }
 
 .logo-container {
   text-align: center; }
+  .logo-container img {
+    display: inline-block; }
+
+.copy {
+  text-align: center;
+  margin-bottom: 10px; }
+
+.grid-item {
+  overflow: hidden; }
+  .grid-item .crew-picture {
+    overflow: hidden;
+    height: 160px; }
+  .grid-item img {
+    width: 100%; }
 
 .box {
   -webkit-border-radius: 10px;
@@ -16,8 +32,7 @@ body {
 
 .row {
   float: left;
-  width: 100%;
-  background-color: #ffff00; }
+  width: 100%; }
 
 .grid-1-4 {
   width: 100%;
@@ -35,6 +50,13 @@ body {
   @media (min-width: 37.5em) {
     .grid-1-3 {
       width: 33.3%; } }
+
+.grid-2-3 {
+  width: 100%;
+  float: left; }
+  @media (min-width: 37.5em) {
+    .grid-2-3 {
+      width: 66.6%; } }
 
 .grid-1-2 {
   width: 100%;
