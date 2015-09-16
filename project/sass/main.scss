@@ -1,11 +1,83 @@
+$background-color: #de1c29;
+
+body {
+  background: $background-color;
+}
+
+.logo-container {
+  text-align: center;
+}
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   -ms-border-radius: $radius;
   border-radius: $radius;
-
 }
 
 .box {
   @include border-radius(10px);
+}
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+
+  }
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.row {
+  float: left;
+  width: 100%;
+  background-color:#ffff00;
+}
+
+.grid-1-4 {
+  width: 100%;
+  @include breakpoint(phablet) {
+    width: 50%;
+  }
+  @include breakpoint(laptop) {
+    width: 25%;
+  }
+  float: left;
+}
+
+.grid-1-3 {
+  width: 100%;
+  @include breakpoint(phablet) {
+    width: 33.3%;
+  }
+  float: left;
+}
+
+.grid-1-2 {
+  width: 100%;
+  @include breakpoint(tablet) {
+    width: 50%;
+  }
+  float: left;
 }
